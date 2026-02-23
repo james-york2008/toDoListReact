@@ -45,7 +45,7 @@ class ToDolist extends React.Component {
     }
 
     fetchTasks() {
-        fetch('https://fewd-todolist-api.onrender.com/tasks?api_key=1') /*Im not sure if this is the right api key but its the one I used on the last toDoList*/
+        fetch("https://fewd-todolist-api.onrender.com/tasks?api_key=48") 
         .then(checkStatus)
         .then(json)
         .then((response) => {
@@ -71,7 +71,7 @@ class ToDolist extends React.Component {
             return
         }
 
-        fetch('https://fewd-todolist-api.onrender.com/tasks?api_key=1', {
+        fetch('https://fewd-todolist-api.onrender.com/tasks?api_key=48', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -97,7 +97,7 @@ class ToDolist extends React.Component {
             return
         }
 
-        fetch(`https://fewd-todolist-api.onrender.co/tasks/${id}?api_key=1`, {
+        fetch(`https://fewd-todolist-api.onrender.co/tasks/${id}?api_key=48`, {
             method: 'DELETE',
             mode: 'cors'
         }).then(checkStatus)
@@ -117,7 +117,7 @@ class ToDolist extends React.Component {
 
         const newState = completed ? 'active' : 'complete'
 
-        fetch(`https://fewd-todolist-api.onrender.com/tasks/${id}/mark_${newState}?api_key=1`, {
+        fetch(`https://fewd-todolist-api.onrender.com/tasks/${id}/mark_${newState}?api_key=48`, {
             method: 'PUT',
             mode: 'cors'
         }).then(checkStatus)
@@ -180,6 +180,7 @@ class ToDolist extends React.Component {
         )
     }
 }
+
 
 const container = document.getElementById('root')
 const root = ReactDOM.createRoot(container)
